@@ -54,10 +54,10 @@ const deprecationData: Record<CompilerDeprecationTypes, DeprecationData> = {
   [CompilerDeprecationTypes.COMPILER_V_BIND_OBJECT_ORDER]: {
     message:
       `v-bind="obj" usage is now order sensitive and behaves like JavaScript ` +
-      `object spread: it will now overwrite an existing attribute that appears ` +
-      `before v-bind in the case of conflicting keys. To retain 2.x behavior, ` +
-      `move v-bind to and make it the first attribute. If all occurences ` +
-      `of this warning are working as intended, you can suppress it.`,
+      `object spread: it will now overwrite an existing non-mergeable attribute ` +
+      `that appears before v-bind in the case of conflict. ` +
+      `To retain 2.x behavior, move v-bind to make it the first attribute. ` +
+      `You can also suppress this warning if the usage is intended.`,
     link: `https://v3.vuejs.org/guide/migration/v-bind.html`
   },
 
